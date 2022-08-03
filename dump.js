@@ -2,6 +2,9 @@ import can from "socketcan";
 
 const channel = can.createRawChannel('vcan0', true);
 
+// Will make thigs more efficent filters for only ids in array
+channel.setRxFilters([{ id: 500, mask: 500 }]);
+
 function dumpPacketOG(msg) {
   console.log('(' + (msg.ts_sec + msg.ts_usec / 1000000).toFixed(6) + ') ' +
     toHex(msg.id).toUpperCase() + '#' + msg.data.toString('hex').toUpperCase());
