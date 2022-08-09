@@ -22,4 +22,11 @@ candump vcan0
 
 cansniffer vcan0
 
+# For REAL CAN
+
+sudo ip link set can0 up type can bitrate 500000 berr-reporting on
+sudo ip link set can1 up type can bitrate 500000 berr-reporting on
+sudo ifconfig can0 txqueuelen 65536
+sudo ifconfig can1 txqueuelen 65536
+
 ```

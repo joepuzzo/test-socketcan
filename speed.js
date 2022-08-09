@@ -1,6 +1,6 @@
 import can from "socketcan";
 
-const channel = can.createRawChannel('vcan0', true);
+const channel = can.createRawChannel('can1', true);
 
 const msg = {
     id: 500,

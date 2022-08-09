@@ -1,6 +1,6 @@
 import can from "socketcan";
 
-const channel = can.createRawChannel('vcan0', true);
+const channel = can.createRawChannel('can0', true);
 
 // Will make thigs more efficent filters for only ids in array
 channel.setRxFilters([{ id: 500, mask: 500 }]);
